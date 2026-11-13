@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>City Sounds</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="panel">
+    <div class="selectors">
+      <label class="field">
+        <span>Borough</span>
+        <select id="borough" disabled>
+          <option value="MANHATTAN">Manhattan</option>
+          <option value="BROOKLYN" selected>Brooklyn</option>
+          <option value="QUEENS">Queens</option>
+          <option value="BRONX">Bronx</option>
+          <option value="STATEN ISLAND">Staten Island</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Date</span>
+        <input id="date" type="date" disabled>
+      </label>
+    </div>
+
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric-label">Dispatch events</span>
+        <strong id="eventCount">—</strong>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Tempo</span>
+        <div class="bpm-value"><strong id="tempo">—</strong><span>BPM</span></div>
+      </div>
+    </div>
+
+    <div class="sound-visual" aria-hidden="true">
+      <div class="beat-ring" id="beatRing"><div class="beat-core"></div></div>
+    </div>
+
+    <button id="playButton" class="play-button" type="button" disabled>
+      <span id="playIcon" aria-hidden="true">▶</span>
+      <span id="playText">Play beat</span>
+    </button>
+
+    <p class="status" id="status" role="status" aria-live="polite">Loading published dates…</p>
+
+    <footer>
+      <a href="https://data.cityofnewyork.us/d/n2zq-pubd" target="_blank" rel="noopener noreferrer">NYPD Open Data</a>
+      <span>Published records · Not live</span>
+    </footer>
+  </main>
+</body>
+</html>
